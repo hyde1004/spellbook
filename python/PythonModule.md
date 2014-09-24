@@ -74,9 +74,9 @@ print(out.netloc)
 print(out.query)
 
 urllib.parse.urlunparse(out)
-'''
+```
 
-''' sh
+``` sh
 ParseResult(scheme='http', netloc='astro.kasi.re.kr', path='/Life/Knowledge/sunmoon_map/sunmoon_popup.php', params='', query='year=2014&month=9&location=%C3%B5%BE%C8', fragment='')
 http
 astro.kasi.re.kr
