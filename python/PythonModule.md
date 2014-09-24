@@ -113,3 +113,20 @@ class MyTestCase(unittest.TestCase):
     def test_nothing(self):
     	self.fail("shouldn't happen")
 ```
+
+#### datetime
+datetime모듈에는 datetime 클래스이외에 date, time 클래스가 있다.
+
+```python
+import datetime
+
+today = datetime.date(2014, 9, 24)
+print(today.year)
+print(today.month)
+print(today.day)
+
+now = datetime.time(17, 40, 24)
+print(now.hour)
+print(now.minute)
+print(now.second)
+```
