@@ -58,8 +58,8 @@ result = response.read().decode('utf-8')
 
 #### urllib.parse
 urllib.parse는 url을 분해하거나 결합하는 모듈이다.
- - urlparse()
- - urlunparse()
+ - urlparse(), urlunparse()
+ - urlsplit(), urlunsplit() : params는 split하지 않는다.
 
 ``` python
 import urllib.parse
