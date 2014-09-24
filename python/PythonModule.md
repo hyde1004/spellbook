@@ -63,14 +63,25 @@ urllib.parse는 url을 분해하거나 결합하는 모듈이다.
 
 ``` python
 import urllib.parse
+
 url = 'http://astro.kasi.re.kr/Life/Knowledge/sunmoon_map/sunmoon_popup.php?year=2014&month=9&location=%C3%B5%BE%C8'
-urllib.parse.urlparse(url)
 
-# ParseResult(scheme='http', netloc='astro.kasi.re.kr', path='/Life/Knowledge/sunmoon_map/sunmoon_popup.php', params='', query='year=2014&month=9&location=%C3%B5%BE%C8', fragment='')
+out = urllib.parse.urlparse(url)
 
-url = 'http://search.naver.com/search.naver?where=nexearch&query=apple&sm=top_hty&fbm=1&ie=utf8'
-urllib.parse.urlparse(url)
-ParseResult(scheme='http', netloc='search.naver.com', path='/search.naver', params='', query='where=nexearch&query=apple&sm=top_hty&fbm=1&ie=utf8', fragment='')
+print(out)
+print(out.scheme)
+print(out.netloc)
+print(out.query)
+
+urllib.parse.urlunparse(out)
+'''
+
+''' sh
+ParseResult(scheme='http', netloc='astro.kasi.re.kr', path='/Life/Knowledge/sunmoon_map/sunmoon_popup.php', params='', query='year=2014&month=9&location=%C3%B5%BE%C8', fragment='')
+http
+astro.kasi.re.kr
+year=2014&month=9&location=%C3%B5%BE%C8
+'http://astro.kasi.re.kr/Life/Knowledge/sunmoon_map/sunmoon_popup.php?year=2014&month=9&location=%C3%B5%BE%C8'
 
 ```
 
