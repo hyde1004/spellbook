@@ -69,22 +69,21 @@ url = 'http://astro.kasi.re.kr/Life/Knowledge/sunmoon_map/sunmoon_popup.php?year
 out = urllib.parse.urlparse(url)
 
 print(out)
+# ParseResult(scheme='http', netloc='astro.kasi.re.kr', path='/Life/Knowledge/sunmoon_map/sunmoon_popup.php', params='', query='year=2014&month=9&location=%C3%B5%BE%C8', fragment='')
+
 print(out.scheme)
+# http
+
 print(out.netloc)
+# astro.kasi.re.kr
+
 print(out.query)
+# year=2014&month=9&location=%C3%B5%BE%C8
 
 urllib.parse.urlunparse(out)
-```
-
-``` sh
-ParseResult(scheme='http', netloc='astro.kasi.re.kr', path='/Life/Knowledge/sunmoon_map/sunmoon_popup.php', params='', query='year=2014&month=9&location=%C3%B5%BE%C8', fragment='')
-http
-astro.kasi.re.kr
-year=2014&month=9&location=%C3%B5%BE%C8
-'http://astro.kasi.re.kr/Life/Knowledge/sunmoon_map/sunmoon_popup.php?year=2014&month=9&location=%C3%B5%BE%C8'
+# 'http://astro.kasi.re.kr/Life/Knowledge/sunmoon_map/sunmoon_popup.php?year=2014&month=9&location=%C3%B5%BE%C8'
 
 ```
-
 
 #### unittest
 
