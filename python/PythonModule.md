@@ -1,7 +1,5 @@
 
-#### Python Module
-
-##### urllib
+#### urllib
 ###### python3에서 urllib2는 urllib에 흡수되었다.
 
 urllib는 다음 모듈을 모아 놓은 패키지이다.
@@ -33,12 +31,10 @@ data = data.encode('utf-8')
 req1 = urllib.request.Request(url)
 response = urllib.request.urlopen(url, data)
 ```
-##### urllib.request
+#### urllib.request
 ###### 출처 : https://docs.python.org/3/library/urllib.request.html#module-urllib.request
 
 urllib.request는 URL관련한 열기, 인증, 쿠키 등에 대한 클래스와 함수를 정의한다.
-
-#### urllib.parse
 
 ``` python
 # Class
@@ -57,6 +53,25 @@ req = urllib.request.Request(url)
 response = urllib.request.urlopen(req)
 
 result = response.read().decode('utf-8')
+```
+
+
+#### urllib.parse
+urllib.parse는 url을 분해하거나 결합하는 모듈이다.
+ - urlparse()
+ - urlunparse()
+
+``` python
+import urllib.parse
+url = 'http://astro.kasi.re.kr/Life/Knowledge/sunmoon_map/sunmoon_popup.php?year=2014&month=9&location=%C3%B5%BE%C8'
+urllib.parse.urlparse(url)
+
+# ParseResult(scheme='http', netloc='astro.kasi.re.kr', path='/Life/Knowledge/sunmoon_map/sunmoon_popup.php', params='', query='year=2014&month=9&location=%C3%B5%BE%C8', fragment='')
+
+url = 'http://search.naver.com/search.naver?where=nexearch&query=apple&sm=top_hty&fbm=1&ie=utf8'
+urllib.parse.urlparse(url)
+ParseResult(scheme='http', netloc='search.naver.com', path='/search.naver', params='', query='where=nexearch&query=apple&sm=top_hty&fbm=1&ie=utf8', fragment='')
+
 ```
 
 #### BeautifulSoup4
