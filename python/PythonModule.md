@@ -60,6 +60,7 @@ result = response.read().decode('utf-8')
 urllib.parse는 url을 분해하거나 결합하는 모듈이다.
  - urlparse(), urlunparse()
  - urlsplit(), urlunsplit() : params는 split하지 않는다.
+ - urlencode() : percent encoded
 
 ``` python
 import urllib.parse
@@ -83,6 +84,23 @@ print(out.query)
 urllib.parse.urlunparse(out)
 # 'http://astro.kasi.re.kr/Life/Knowledge/sunmoon_map/sunmoon_popup.php?year=2014&month=9&location=%C3%B5%BE%C8'
 
+```
+
+``` python
+import urllib.parse
+import urllib.request
+
+url = 'http://astro.kasi.re.kr/Life/Knowledge/sunmoon_map/sunmoon_popup.php'
+# query = urllib.parse.urlencode({'year':2014, 'month':9, 'location':'천안'})
+query = urllib.parse.urlencode({'year':2014, 'month':9, 'location':'천안'.encode('euc-kr')})
+# '천안'.encode('euc-kr')로 encode하지 않으면, 제대로 동작하지 않는다. 왜일까?
+
+query = query.encode('euc-kr') 
+# encode 하지 않으면, open할때 에러 발생. TypeError: POST data should be bytes or an iterable of bytes. It cannot be of type str.
+
+req = urllib.request.Request(url, query)
+f = urllib.request.urlopen(req)
+f.read()
 ```
 
 #### unittest
