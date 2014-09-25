@@ -82,7 +82,8 @@ print(out.query)
 # year=2014&month=9&location=%C3%B5%BE%C8
 
 urllib.parse.urlunparse(out)
-# 'http://astro.kasi.re.kr/Life/Knowledge/sunmoon_map/sunmoon_popup.php?year=2014&month=9&location=%C3%B5%BE%C8'
+# 'http://astro.kasi.re.kr/Life/Knowledge/sunmoon_map/sunmoon_popup.php?
+# year=2014&month=9&location=%C3%B5%BE%C8'
 
 ```
 
@@ -96,7 +97,9 @@ query = urllib.parse.urlencode({'year':2014, 'month':9, 'location':'천안'.enco
 # '천안'.encode('euc-kr')로 encode하지 않으면, 제대로 동작하지 않는다. 왜일까?
 
 query = query.encode('euc-kr') 
-# encode 하지 않으면, open할때 에러 발생. TypeError: POST data should be bytes or an iterable of bytes. It cannot be of type str.
+# encode 하지 않으면, open할때 에러 발생. 
+# TypeError: POST data should be bytes or an iterable of bytes. 
+# It cannot be of type str.
 
 req = urllib.request.Request(url, query)
 f = urllib.request.urlopen(req)
