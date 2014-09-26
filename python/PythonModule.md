@@ -91,18 +91,45 @@ urllib.parse.urlunparse(out)
 import urllib.parse
 import urllib.request
 
+
+# try 1 : 원하는 encode 결과가 나오지 않는다.
 url = 'http://astro.kasi.re.kr/Life/Knowledge/sunmoon_map/sunmoon_popup.php'
-# query = urllib.parse.urlencode({'year':2014, 'month':9, 'location':'천안'})
+query = urllib.parse.urlencode({'year':2014, 'month':9, 'location':'천안'})
+query = query.encode('euc-kr') 
+
+# try 2 : 원하는 encode 결과가 나온다.
+url = 'http://astro.kasi.re.kr/Life/Knowledge/sunmoon_map/sunmoon_popup.php'
 query = urllib.parse.urlencode({'year':2014, 'month':9, 'location':'천안'.encode('euc-kr')})
-# '천안'.encode('euc-kr')로 encode하지 않으면, 제대로 동작하지 않는다. 왜일까?
+query = query.encode('euc-kr') 
+
+# try 3 : 원하는 encode 결과가 나온다.
+url = 'http://astro.kasi.re.kr/Life/Knowledge/sunmoon_map/sunmoon_popup.php'
+query = urllib.parse.urlencode({'year':2014, 'month':9, 'location':'천안'}, encoding='euc-kr')
+query = query.encode('euc-kr') 
+
+
+# try 2, 3 처럼 urlencode()에 encoding을 명시하지 않으면,
+# encoding='utf-8'로 선처리되어, 원하는 결과가 나오지 않는다.
 
 query = query.encode('euc-kr') 
 # encode 하지 않으면, open할때 에러 발생. 
 # TypeError: POST data should be bytes or an iterable of bytes. 
 # It cannot be of type str.
+# urllib.request.Request()의 인자로 사용하기 위해서는
+# 반드시 bytes 형태로 변환해주어야 하는것 같다.
 
+# 그런데, urllib.request.urlopen()에 넣는 방법은 str형태도 허용한다.
+# POST 데이터를 보낼게 아니라면, 
+# 위의 방법보다 try 2가 더 단순하고, 적절해 보인다.
+
+# try 1
 req = urllib.request.Request(url, query)
 f = urllib.request.urlopen(req)
+f.read()
+
+# try 2
+query = urllib.parse.urlencode({'year':2014, 'month':9, 'location':'천안'}, encoding='euc-kr')
+f = urllib.request.urlopen("%s?%s" % (url, query))
 f.read()
 ```
 
