@@ -32,6 +32,15 @@ cursor.execute("....")
 # 작업한 내용을 DB에 반영 
 con.commit()
 
+# 데이터 읽기
+cursor.execute("*SELECT * FROM kospi;")
+for row in cursor:
+	print(row)
+    
+cursor.execute("*SELECT * FROM kospi;")
+cursor.fetchone() # 하나 읽기
+
+mydata = cursor.fetchall() # 전체 읽기
 # DB 닫기
 con.close()
 ```
