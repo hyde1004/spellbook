@@ -60,3 +60,8 @@ axes.set_xlabel('x')
 axes.set_ylabel('y')
 axes.set_title('title')
 ```
+
+#### ipython으로 사용하기
+``` sh
+ipython notebook --inline=pylab
+```
