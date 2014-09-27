@@ -167,3 +167,11 @@ print(now.hour)
 print(now.minute)
 print(now.second)
 ```
+
+#### math
+실수의 정수부와 소수부를 분리하는 함수이다.
+``` python
+import math
+math.modf(1.4)
+# (0.3999999999999999, 1.0)
+```
