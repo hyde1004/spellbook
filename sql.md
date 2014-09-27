@@ -5,7 +5,9 @@
  
 #### 문법
 SQL은 기본적으로 column 위주인것 같다. 
-항상 column을 명시해야 한다. `SELECT <컬럼> FROM <TABLE> WHERE <조건>`
+항상 column을 명시해야 한다. 
+
+`SELECT <컬럼> FROM <TABLE> WHERE <조건>`
 
 ``` sql
 SELECT * FROM Customers;
