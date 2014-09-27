@@ -61,6 +61,15 @@ axes.set_ylabel('y')
 axes.set_title('title')
 ```
 
+#### dates module
+``` python
+import datetime
+import matplotlib.dates
+
+day = datetime.date.now()
+matplotlib.dates.date2num(day) # 0년, 1월, 1일부터의 날짜를 실수로 변환. 실제값보다 1이 많다.
+```
+
 #### ipython으로 사용하기
 ``` sh
 ipython notebook --inline=pylab
