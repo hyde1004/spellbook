@@ -1,6 +1,7 @@
 ### sqlite3 module
 ###### Reference
  - [파이썬을 이용한 시스템 트레이딩 (기초편)](https://wikidocs.net/1307)
+ - [Introduction to SQLite in Python](http://www.pythoncentral.io/introduction-to-sqlite-in-python/)
 
 Reference를 봐도 충분할것 같다.
 아래는 SQL 명령과 Python과의 연결부분을 분리하여 정리한다.
