@@ -144,6 +144,13 @@ class MyTestCase(unittest.TestCase):
     	self.fail("shouldn't happen")
 ```
 
+##### floating tests
+소수부는 상황에 따라서 조금씩 다른 값을 가진다. (예 1.0 <-> 0.9999999 )
+비슷한 값을 비교할때 쓸 수 있는 조건이다.
+``` python
+assertAlmostEqual(a, b)
+```
+
 #### datetime
 datetime모듈에는 datetime 클래스이외에 date, time 클래스가 있다.
 
