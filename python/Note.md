@@ -76,3 +76,10 @@ int("10", 2)  # 2
 int("10", 8)  # 8
 int("10", 16) # 16
 ```
+
+##### 객체 타입 확인하기
+`isinstance(object, classinfo)`를 사용한다. unittest의 객체 생성후에 확인용도로도 적합할것 같다.
+
+``` python
+isinstance(1, int) # True
+```
