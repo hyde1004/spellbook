@@ -144,6 +144,15 @@ class MyTestCase(unittest.TestCase):
     	self.fail("shouldn't happen")
 ```
 
+##### 반복 구문
+`setUp()`과 `tearDown()`을 사용하면 된다. 대소문자에 주의하자.
+``` python
+class MyTestCase(unittest.TestCase):
+	def setUp(self):
+		pass
+	def tearDown(self):
+		pass
+```
 ##### floating tests
 소수부는 상황에 따라서 조금씩 다른 값을 가진다. (예 1.0 <-> 0.9999999 )
 비슷한 값을 비교할때 쓸 수 있는 조건이다.
