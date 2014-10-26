@@ -85,4 +85,4 @@ isinstance(1, int) # True
 ```
 
 ##### list의 마지막 원소
-`a[len(a)-1]`은 `a[-1]`처럼 reverse index를 사용하자. 
+`a[len(a)-1]`은 `a[-1]`처럼 reverse index를 사용하면, 더 단순하다. 
