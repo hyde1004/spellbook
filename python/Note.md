@@ -88,8 +88,15 @@ isinstance(1, int) # True
 `a[len(a)-1]`은 `a[-1]`처럼 reverse index를 사용하면, 더 단순하다. 
 
 ##### print 사용시에 이어서 출력하기
-```
+``` python
 print('0', end='')
 print('1', end='')
 print('2', end='')
+```
+
+##### 몫, 나머지 구하기
+``` python
+
+divmod(10,3) # (3,1) 
+
 ```
