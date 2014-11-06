@@ -10,8 +10,8 @@ $*는 목표 이름에서 확장자를 제거한 이름이다.
 tcp.o	: tcp.c tcp.h 
   gcc -c tcp.c 
 ```
-
+수정하면 다음과 같다.
 ``` bash
-tcp.o	: $*.c tcp.h 
+tcp.o	: tcp.c tcp.h 
     gcc -c $*.c
 ```
