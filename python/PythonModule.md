@@ -184,3 +184,9 @@ import math
 math.modf(1.4)
 # (0.3999999999999999, 1.0)
 ```
+
+#### random
+``` python
+import random
+random.randint(1, 3) # 1~3 범위. 1과 3을 포함.
+```
