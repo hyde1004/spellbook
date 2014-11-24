@@ -101,7 +101,7 @@ divmod(10,3) # (3,1)
 
 ```
 
-#### list의 `append`와 `extend`의 차이
+##### list의 `append`와 `extend`의 차이
 `append`는 더하고, `extend`는 합친다.
 
 ``` python
