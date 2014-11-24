@@ -100,3 +100,18 @@ print('2', end='')
 divmod(10,3) # (3,1) 
 
 ```
+
+#### list의 `append`와 `extend`의 차이
+`append`는 더하고, `extend`는 합친다.
+
+``` python
+x = [1, 2, 3]
+x.append([4, 5])
+print (x) 
+# [1, 2, 3, [4, 5]] 
+
+x = [1, 2, 3]
+x.extend([4, 5])
+print (x)
+# [1, 2, 3, 4, 5]
+```
