@@ -8,7 +8,7 @@
 '수정'의 단계는 '의미'를 기준으로 commit한다. `pull`은 remote에서 local 저장소로, `push`는 local에서 remote로 보내는 작업이다.
 
 ##### 명령어
-`git log`
-`git log -1` : 마지막 commit log
-`git log -2` : 마지막 2개의 commit log
-`git log --oneline` : 각 commit을 한줄로 표시
+ - `git log`
+ - `git log -1` : 마지막 commit log
+ - `git log -2` : 마지막 2개의 commit log
+ - `git log --oneline` : 각 commit을 한줄로 표시
