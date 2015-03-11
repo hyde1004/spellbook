@@ -26,3 +26,8 @@ fi
 ```
 
 #### pushd / popd
+
+#### cat
+```bash
+cat -n hello.c # 줄번호 출력
+```
