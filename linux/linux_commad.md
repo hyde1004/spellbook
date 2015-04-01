@@ -33,3 +33,6 @@ cat -n hello.c # 줄번호 출력
 ```
 
 #### mail
+
+#### date
+`crontab`에서 `date`사용할때는 `%`를 주의해야 한다. (http://egloos.zum.com/entireboy/v/4621694)
