@@ -2,6 +2,7 @@
 ##### reference
  - Node.js Q&A (http://nodeqa.com/sitemap# 에서 tmux로 검색)
  - http://awhan.wordpress.com/2010/06/20/copy-paste-in-tmux/
+ - http://zanshin.net/2013/09/05/my-tmux-configuration/ (설정)
  
 tmux는 좀 더 개선된 screen이라 생각하면 된다.
 
@@ -66,4 +67,12 @@ ctrl + b + [ # copy mode 진입
 space # copy 시작
 Enter # copy 완료
 ctrl + b + ] # paste
+```
+
+tmux configuration
+```bash
+# .tmux.conf
+
+# set scrollback history to 10000 (10k)
+set -g history-limit 10000
 ```
