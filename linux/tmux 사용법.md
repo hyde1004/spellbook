@@ -76,7 +76,8 @@ tmux configuration
 # set scrollback history to 10000 (10k)
 set -g history-limit 10000
 
-# 상태바 수정하기 http://blog.outsider.ne.kr/699
+
+# 상태바 수정하기 - http://blog.outsider.ne.kr/699
 # Set status bar
 set -g status-bg black
 set -g status-fg white
@@ -84,4 +85,20 @@ set -g status-left '#[fg=green]#H'
 
 # Highlight active window
 set-window-option -g window-status-current-bg red
+
+
+# https://gist.github.com/zolrath/2305333에서의 tmux 설정
+set -g status-left-length 32
+set -g status-right-length 150
+
+set -g status-fg white
+set -g status-bg colour234
+set -g window-status-activity-attr bold
+set -g pane-border-fg colour245
+set -g pane-active-border-fg colour39
+set -g message-fg colour16
+set -g message-bg colour221
+set -g message-attr bold
+
+
 ```
