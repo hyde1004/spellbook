@@ -12,7 +12,6 @@
  - ERROR
  - CRITICAL
 
-
 ##### 예제
 ```
 import logging
