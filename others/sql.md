@@ -3,6 +3,7 @@
 ###### Reference
  - [w3school.com의 SQL Tutorial](http://www.w3schools.com/sql/default.asp) : SQL 기본 명령과 웹상에서 SQL 명령을 실행해 볼 수 있다.
  - [SQLite C Interface - Functions](https://www.sqlite.org/c3ref/funclist.html)
+ - [tutorialspoint - SQLite](https://www.tutorialspoint.com/sqlite/index.htm)
 
 #### 문법
 SQL은 기본적으로 column 위주인것 같다.
@@ -19,11 +20,14 @@ SELECT CustomerName, Address FROM Customers FROM Customers WHERE country='Mexico
 ```
 
 #### Android TV Provider를 이용한 연습
-``` bash
-sqlite3 tv.db # open
-```
 ``` sql
-.schema channels # schema 보이기
+.open tv.db -- tv.db 열기
+
+.tables  -- db안의 테이블 출력
+/*  출력화면
+android_metadata  channels          programs          watched_programs
+*/
+.schema channels -- schema 보이기
 /* output
 CREATE TABLE channels (
   _id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -117,6 +121,129 @@ transport_stream_id|service_id|display_number|display_name
 11|12173|101|Airtel Offers 2
 
 이하 생략
+*/
+```
+
+컬럼 정보를 좀 더 쉽게 구분하기 위해 `.mode`를 사용한다.
+``` sql
+.mode column                                                                        
+SELECT transport_stream_id, service_id, display_name, display_number FROM channels;
+/* 출력 화면
+transport_stream_id  service_id  display_name    display_number                             
+-------------------  ----------  --------------  --------------                             
+11                   13046       Airtel SD Home  98                                         
+1                    7999        Airtel Offers   99                                         
+11                   12112       Airtel HD Home  100                                        
+11                   12173       Airtel Offers   101                                        
+5                    1101        Star Plus       102                                        
+10                   10125       Star Plus HD    103                                        
+11                   1102        Zee TV          104   
+
+이하 생략
+*/                                     
+```
+
+데이터가 너무 많으므로, 10개로 제한하여 출력하자.
+``` sql
+SELECT transport_stream_id, service_id, display_name, display_number FROM channels LIMIT 10;
+/*  출력 화면
+transport_  service_id            display_na  display_number
+----------  --------------------  ----------  --------------
+11          13046                 Airtel SD   98
+1           7999                  Airtel Off  99
+11          12112                 Airtel HD   100
+11          12173                 Airtel Off  101
+5           1101                  Star Plus   102
+10          10125                 Star Plus   103
+11          1102                  Zee TV      104
+10          11127                 Zee TV HD   105
+3           1103                  Sony Ent    106
+10          12013                 Sony HD     107
+*/
+```
+
+transport_stream_id 값으로 오름 차순 정렬하여 출력해보자.
+``` sql
+SELECT transport_stream_id, service_id, display_number, display_name FROM channels ORDER BY transport_stream_id ASC;
+/*  출력 화면
+transport_  service_id            display_nu  display_name
+----------  --------------------  ----------  ---------------
+1           7999                  99          Airtel Offers 1
+1           2124                  114         HomeShop 18
+1           12072                 115         Shop CJ
+1           12212                 126         The EPIC Channe
+1           12192                 128         Naaptol Blue
+1           1107                  131         Enter 10
+1           12207                 133         ID
+1           12108                 138         DD India
+
+이하 생략
+*/
+```
+
+transport_stream_id 값만 출력해보자
+``` sql
+SELECT transport_stream_id FROM channels;
+/*  출력화면
+transport_stream_id
+--------------------
+11
+1
+11
+11
+5
+10
+11
+10
+3
+10
+2
+8
+11
+10
+11
+6
+
+이하 생략
+*/
+```
+
+중복값이 제거된 transport_stream_id을 출력해보자.
+``` sql
+SELECT DISTINCT transport_stream_id FROM channels;
+/* 출력 화면
+transport_stream_id
+--------------------
+11
+1
+5
+10
+3
+2
+8
+6
+7
+9
+12
+4
+*/
+
+SELECT DISTINCT transport_stream_id FROM channels ORDER BY transport_stream_id; -- 오름차순 정렬
+/* 출력 화면
+transport_stream_id
+--------------------
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
 */
 
 ```
